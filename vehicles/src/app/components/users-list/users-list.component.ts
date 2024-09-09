@@ -26,7 +26,9 @@ export class UsersListComponent implements OnInit {
     });
   }
 
-  selectUser(user: User): void {
-    this.router.navigate(['/user-vehicles', user.userId]);
+
+
+  trackByUserId(index: number, user: User): string {
+    return user.userId;
   }
 }

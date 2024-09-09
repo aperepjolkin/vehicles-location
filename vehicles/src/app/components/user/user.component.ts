@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, Input } from '@angular/core';
 import { type User } from '../../models/user.model';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  user = input.required<User>();
+  @Input() user!: User; // Corrected decorator and usage
 
-  imagePath = computed(() => 'users/' + this.user().avatar);
+  imagePath = computed(() => 'users/' + this.user.avatar);
 }

@@ -1,8 +1,8 @@
 <div>
-  <a [routerLink]="['/user-vehicles/', user().userId]" routerLinkActive="selected">
-    <img [src]="imagePath()" [alt]="user().userName" />
-    <span>{{ user().userName }}</span>
-    <p>Vehicles: {{ user().vehicles?.length || 0 }}</p>
+  <a [routerLink]="['/user-vehicles/', user.userId]" routerLinkActive="selected">
+    <img [src]="imagePath()" [alt]="user.userName" />
+    <span>{{ user.userName }}</span>
+    <p>Vehicles: {{ user.vehicles?.length || 0 }}</p>
   </a>
 
 </div>

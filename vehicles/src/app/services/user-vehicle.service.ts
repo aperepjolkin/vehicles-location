@@ -44,8 +44,8 @@ export class UserVehicleService {
     return of(this.users);
   }
 
-  getUserById(userId: string): Observable<User | null> {
+  getUserById(userId: string): Observable<User | undefined> {
     const user = this.users.find(user => user.userId === userId);
-    return of(user ?? null);
+    return of(user !== undefined ? user : undefined);
   }
 }
