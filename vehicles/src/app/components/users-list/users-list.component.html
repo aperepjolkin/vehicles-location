@@ -1,0 +1,8 @@
+<!-- users-list.component.html -->
+<ul id="users">
+  @for (user of users; track user.userId) {
+    <li>
+      <app-user [user]="user" />
+    </li>
+  }
+</ul>

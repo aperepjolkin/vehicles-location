@@ -5,4 +5,5 @@ export class Vehicle
   latitude!: number;
   longitude!: number;
   userId!: string;
+  color!: string;
 }

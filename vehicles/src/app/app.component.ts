@@ -1,13 +1,16 @@
+import { UserVehiclesComponent } from './components/user-vehicles/user-vehicles.component';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { UserVehicleModule } from './components/user-vehicle-list/user-vehicle.module';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { UsersModule } from './components/users-list/users.module';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UserComponent } from './components/user/user.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserVehicleModule],
+  imports: [RouterOutlet, RouterModule, UsersListComponent, UserComponent, UserVehiclesComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Fix the property name
 })
 export class AppComponent {
   title = 'vehicles';

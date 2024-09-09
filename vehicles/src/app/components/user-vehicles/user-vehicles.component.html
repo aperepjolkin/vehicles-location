@@ -1,0 +1,10 @@
+<!-- user-vehicles.component.html -->
+<div *ngIf="user">
+  <button (click)="goBack()">Back to User List</button>
+  <h2>{{ user?.userName }}'s Vehicles</h2>
+  <ul>
+    <li *ngFor="let vehicle of user?.vehicles">
+      {{ vehicle?.vehicleName }}
+    </li>
+  </ul>
+</div>
