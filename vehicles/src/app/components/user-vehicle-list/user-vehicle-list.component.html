@@ -1,0 +1,13 @@
+<!-- user-vehicle-list.component.html -->
+<div class="user-list">
+  <div *ngFor="let user of users" class="user-item">
+    <h2>{{ user.userName }}</h2>
+    <p>User ID: {{ user.userId }}</p>
+    <p>Number of Vehicles: {{ user.vehicles?.length || 0 }}</p>
+    <ul>
+      <li *ngFor="let vehicle of user.vehicles">
+        {{ vehicle.vehicleName }} (Lat: {{ vehicle.latitude }}, Long: {{ vehicle.longitude }})
+      </li>
+    </ul>
+  </div>
+</div>
