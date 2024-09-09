@@ -14,11 +14,11 @@ export class UserVehicleService {
   private users: User[] = [
     {
       userId: '1',
-      userName: 'Jasmine Washington',
-      avatar: 'user-1.jpg',
+      userName: 'Aleksandrs Perepjolkins',
+      avatar: 'MyPhoto.jpg',
 
       vehicles: [
-        { vehicleId: 'v1', vehicleName: 'Car A', latitude: 40.7128, longitude: -74.0060, userId: '1', color: 'green'},
+        { vehicleId: 'v1', vehicleName: 'Volvo V70', latitude: 56.9496, longitude: 24.0978, userId: '1', color: 'green'},
         { vehicleId: 'v2', vehicleName: 'Car B', latitude: 34.0522, longitude: -118.2437, userId: '1', color: 'green' }
       ]
     },
