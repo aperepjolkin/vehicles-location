@@ -1,5 +1,5 @@
 // components/user-vehicles/user-vehicles.component.ts
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserVehicleService } from '../../services/user-vehicle.service';
@@ -17,22 +17,24 @@ import { MapViewComponent } from '../map-view/map-view.component';
 export class UserVehiclesComponent implements OnInit {
   user: User | null = null;
   vehicles: Vehicle[] = [];
-
+  private activatedRoute = inject(ActivatedRoute);
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private userVehicleService: UserVehicleService
+
   ) {}
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.paramMap.get('userId');
-    if (userId) {
-      this.userVehicleService.getUserById(userId).subscribe((user) => {
-        this.user = user || null;
-        this.loadVehicleLocations(userId);
-      });
-    }
-  }
+    const userId = this.activatedRoute.paramMap.subscribe({
+      next: (paramMap) => {
+        const userId = paramMap.get('userId');
+        if (userId) {
+          this.userVehicleService.getUserById(userId).subscribe((user) => {
+            this.user = user || null;
+            this.loadVehicleLocations(userId);
+          });
+  }}})}
 
   loadVehicleLocations(userId: string): void {
     this.userVehicleService.getUserById(userId).subscribe((user) => {
