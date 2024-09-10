@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input() user!: User; // Corrected decorator and usage
+  @Input() user!: User;
 
   imagePath = computed(() => 'users/' + this.user.avatar);
 }

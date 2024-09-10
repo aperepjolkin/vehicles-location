@@ -6,11 +6,12 @@ import { UserVehicleService } from '../../services/user-vehicle.service';
 import { User } from '../../models/user.model';
 import { Vehicle } from '../../models/vehicle.model';
 import { MapViewComponent } from '../map-view/map-view.component';
+import { UserVehicleComponent } from '../user-vehicle/user-vehicle.component';
 
 @Component({
   selector: 'app-user-vehicles',
   standalone: true,
-  imports: [CommonModule, MapViewComponent],
+  imports: [CommonModule, MapViewComponent, UserVehicleComponent],
   templateUrl: './user-vehicles.component.html',
   styleUrls: ['./user-vehicles.component.css']
 })

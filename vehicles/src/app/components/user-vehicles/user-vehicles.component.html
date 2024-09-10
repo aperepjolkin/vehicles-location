@@ -3,7 +3,7 @@
   <h2>{{ user.userName }}'s Vehicles</h2>
   <ul>
     <li *ngFor="let vehicle of user.vehicles">
-      {{ vehicle.vehicleName }}
+      <app-user-vehicle [vehicle]="vehicle"></app-user-vehicle>
     </li>
   </ul>
   <app-map-view [vehicles]="vehicles"></app-map-view>

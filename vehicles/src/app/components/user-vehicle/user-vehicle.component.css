@@ -1,0 +1,22 @@
+a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  background-color: #1d9eda;
+  color: #0d0d0d;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  min-width: 10rem;
+  text-align: left;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+.selected {
+  background-color: #a5e0ec;
+  color: #150722;
+}
